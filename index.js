@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // API endpoint to retrieve JSON data containing image references
-app.get('/api/images', (req, res) => {
+app.get('/', (req, res) => {
   const data = require('./data.json');
   res.json(data);
 });
