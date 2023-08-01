@@ -2,9 +2,8 @@ const express = require('express');
 const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
-const cors=require("cors")
-
-
+const cors=require("cors");
+const data = require('./data.json');
 const app = express();
 app.use(cors())
 const port =process.env.PORT || 3000;
@@ -28,14 +27,14 @@ const upload = multer({ storage: storage });
 
 // API endpoint to retrieve JSON data containing image references
 app.get('/', (req, res) => {
-  const data = require('./data.json');
-  res.json(data);
+
+  res.send(data);
 });
 
-// API endpoint to upload an image (if required)
-app.post('/api/upload', upload.single('image'), (req, res) => {
-  res.json({ message: 'Image uploaded successfully!' });
-});
+// // API endpoint to upload an image (if required)
+// app.post('/api/upload', upload.single('image'), (req, res) => {
+//   res.json({ message: 'Image uploaded successfully!' });
+// });
 
 // Start the server
 app.listen(port, () => {
