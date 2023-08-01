@@ -1,0 +1,8 @@
+{
+    "images": [
+      { "name": "Image 1", "filename": "my.jpg" },
+      { "name": "Image 2", "filename": "my.jpg" },
+      { "name": "Image 3", "filename": "my.jpg" }
+    ]
+  }
+  
